@@ -4,7 +4,7 @@ const compression = require("compression");
 const helmet = require("helmet");
 require("dotenv").config();
 const pageRoutes = require("./routes/pageRoutes");
-const { manageGeneralErrors } = require("./middlewares/GeneralErrorMiddleware");
+const { manageGeneralErrors } = require("./middlewares/generalErrorMiddleware");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
