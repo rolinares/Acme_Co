@@ -7,8 +7,8 @@ A lightweight **Markdown-based** CMS for Acme Co, built with **Node.js and React
 ### **1️⃣ Clone the repository**
 
 ```sh
-git clone <repository-url>
-cd acme-cms
+git clone https://github.com/rolinares/Acme_Co.git
+cd Acme_Co
 ```
 
 ### **2️⃣ Set up the backend**
