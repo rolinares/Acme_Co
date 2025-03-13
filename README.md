@@ -33,14 +33,14 @@ Before running the project, create a `.env` file in the **backend** folder and c
 
 ```env
 PORT=3001
-CONTENT_DIR=./content
-TEMPLATE_PATH=./template.html
+FRONTEND_URL="http://localhost:5173"
 ```
 
 For the **frontend**, create a `.env` file inside `frontend/` with:
 
 ```env
-VITE_BACKEND_URL=http://localhost:3001
+VITE_API_URL=""
+VITE_PROXY_API_URL="http://localhost:3001"
 ```
 
 ---
@@ -111,18 +111,19 @@ Tests include:
    cd frontend
    vercel --prod
    ```
-   **Deployed on:** https://acmeco.vercel.app/
+   **Frontend deployed on:** https://acmeco.vercel.app/
 
 ### **Backend Deployment (Render)**
 
 1. Go to [Render](https://render.com/) and create a new **Node.js service**.
-2. Connect your repository and set environment variables (`PORT`, `CONTENT_DIR`, `TEMPLATE_PATH`).
+2. Connect your repository and set environment variables (`PORT`, `FRONTEND_URL`).
 3. Deploy and note the backend URL.
 4. Update the **frontend `.env` file** with the deployed backend URL:
    ```env
-   VITE_BACKEND_URL=https://your-backend-url.onrender.com
+   VITE_API_URL=https://your-backend-url.onrender.com
+    VITE_PROXY_API_URL=https://your-backend-url.onrender.com
    ```
-   **Deployed on:** `https://acme-co-api.onrender.com`
+   **Backend deployed on:** https://acme-co-api.onrender.com
 
 ---
 
