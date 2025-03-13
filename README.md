@@ -111,6 +111,7 @@ Tests include:
    cd frontend
    vercel --prod
    ```
+   **Deployed on:** https://acmeco.vercel.app/
 
 ### **Backend Deployment (Render)**
 
