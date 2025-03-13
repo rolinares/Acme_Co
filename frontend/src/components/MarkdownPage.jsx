@@ -11,7 +11,7 @@ export default function MarkdownPage() {
   );
 
   useEffect(() => {
-    fetch(`/api/${slug || location.pathname}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/${slug || location.pathname}`)
       .then((response) => response.text())
       .then((markdown) => {
         setContent(markdown);
