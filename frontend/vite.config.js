@@ -13,5 +13,6 @@ export default defineConfig(({ mode }) => {
         "/api": env.VITE_PROXY_API_URL,
       },
     },
+    base: "/",
   };
 });
