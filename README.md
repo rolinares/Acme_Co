@@ -121,7 +121,7 @@ Tests include:
 4. Update the **frontend `.env` file** with the deployed backend URL:
    ```env
    VITE_API_URL=https://your-backend-url.onrender.com
-    VITE_PROXY_API_URL=https://your-backend-url.onrender.com
+   VITE_PROXY_API_URL=https://your-backend-url.onrender.com
    ```
    **Backend deployed on:** https://acme-co-api.onrender.com
 

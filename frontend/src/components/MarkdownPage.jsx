@@ -1,27 +1,31 @@
 import { useEffect, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 export default function MarkdownPage() {
-  const { slug } = useParams();
   const location = useLocation();
   const [content, setContent] = useState(
     '<h1 class="text-2xl text-center mt-10">Loading...</h1>'
   );
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/${slug || location.pathname}`)
-      .then((response) => response.text())
-      .then((markdown) => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/${location.pathname}`
+      );
+      try {
+        const markdown = await response.text();
         setContent(markdown);
-      })
-      .catch(() =>
+        // eslint-disable-next-line no-unused-vars
+      } catch (error) {
         setContent(
           '<h1 class="text-red-500 text-center mt-10">Page not found</h1>'
-        )
-      );
-  }, [slug, location.pathname]);
+        );
+      }
+    };
+    fetchData();
+  }, [location.pathname]);
 
   return (
     <motion.div

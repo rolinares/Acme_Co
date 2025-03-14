@@ -8,7 +8,6 @@ function App() {
       <div className="bg-gray-100 min-h-screen p-5">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/:slug" element={<MarkdownPage />} />
           <Route path="/*" element={<MarkdownPage />} />
         </Routes>
       </div>

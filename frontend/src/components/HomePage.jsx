@@ -5,12 +5,18 @@ import { motion } from "framer-motion";
 export default function HomePage() {
   const [availableLinks, setAvailableLinks] = useState([]);
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/dynamic-pages`)
-      .then((response) => response.json())
-      .then((links) => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/dynamic-pages`
+      );
+      const links = await response.json();
+      if (links.pages) {
         setAvailableLinks(links.pages);
-      })
-      .catch(() => setAvailableLinks([]));
+      } else {
+        setAvailableLinks([]);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
